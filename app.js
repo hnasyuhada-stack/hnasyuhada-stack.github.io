@@ -41,15 +41,24 @@
   const rsvpSuccess = document.getElementById("rsvpSuccess");
   const closeRsvpSuccess = document.getElementById("closeRsvpSuccess");
 
-  // The bride-family invitation shares the approved painted visual language,
-  // while `invitationType` continues to control its family-only content.
-  const visualInvitationType = lockedSide === "bride" && invitationType === "family"
+  // Both family invitations share the approved painted visual language.
+  // The groom route uses a separate champagne palette while `invitationType`
+  // and `lockedSide` continue to control the correct family-only content.
+  const usesPaintedFamilyDesign = invitationType === "family" && ["bride", "groom"].includes(lockedSide);
+  const visualInvitationType = usesPaintedFamilyDesign
     ? "reception"
     : invitationType;
+  const visualSide = usesPaintedFamilyDesign ? "bride" : (lockedSide || "public");
   document.body.dataset.invite = visualInvitationType;
   document.body.dataset.contentInvite = invitationType;
-  document.body.dataset.side = lockedSide || "public";
-  const themeColor = visualInvitationType === "reception" && lockedSide === "bride"
+  document.body.dataset.side = visualSide;
+  document.body.dataset.contentSide = lockedSide || "public";
+  if (lockedSide === "groom" && invitationType === "family") {
+    document.body.dataset.palette = "champagne";
+  }
+  const themeColor = lockedSide === "groom" && invitationType === "family"
+    ? "#795b3a"
+    : visualInvitationType === "reception" && lockedSide === "bride"
     ? "#18283f"
     : visualInvitationType === "reception" && lockedSide === "groom"
       ? "#71806f"

@@ -2542,3 +2542,181 @@ body[data-invite="reception"][data-side="bride"] .hero-blessing .hero-monogram {
     transform: none;
   }
 }
+
+/* Groom-family variation: the approved painted invitation in champagne. */
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] {
+  --paint-ivory: #fbf6eb;
+  --paint-paper: #fffaf0;
+  --paint-powder: #efe2cc;
+  --paint-sky: #dcc49a;
+  --paint-blue: #b78d55;
+  --paint-deep: #795b3a;
+  --paint-ink: #4f3d2c;
+  --paint-sage: #988568;
+  --paint-gold: #bd8d49;
+  --paint-white: #fffaf0;
+  --quick-nav-accent: #ad8248;
+  --quick-nav-ink: #624a31;
+  --quick-nav-surface: rgba(255, 249, 238, .92);
+  --quick-nav-border: rgba(173, 130, 72, .38);
+  background: var(--paint-ivory);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .opening-screen {
+  background:
+    radial-gradient(circle at 12% 19%, rgba(220,196,154,.42), transparent 23rem),
+    radial-gradient(circle at 88% 78%, rgba(183,141,85,.2), transparent 25rem),
+    radial-gradient(circle at 50% 46%, rgba(255,252,244,.94), transparent 25rem),
+    repeating-linear-gradient(96deg, rgba(79,61,44,.018) 0 1px, transparent 1px 5px),
+    repeating-linear-gradient(4deg, rgba(79,61,44,.014) 0 1px, transparent 1px 7px),
+    linear-gradient(145deg, #efe3ce, #fcf8ef 50%, #e8d3b0);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .opening-screen::before,
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .botanical,
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .events-section::before {
+  filter: sepia(.76) saturate(.72) hue-rotate(349deg) brightness(1.08);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .opening-screen::after {
+  border-color: rgba(121,91,58,.4);
+  box-shadow: inset 0 0 0 5px rgba(251,246,235,.66), inset 0 0 0 6px rgba(183,141,85,.22), 0 24px 70px rgba(92,67,40,.09);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .opening-frame {
+  border-color: rgba(183,141,85,.24);
+  background: repeating-linear-gradient(96deg, rgba(121,91,58,.018) 0 1px, transparent 1px 6px), rgba(255,255,255,.1);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .opening-frame::before,
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .opening-frame::after {
+  color: var(--paint-gold);
+  background: #f8f0e1;
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .envelope {
+  position: relative;
+  background: none;
+  filter: drop-shadow(0 22px 30px rgba(92,67,40,.16));
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .envelope::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  display: block;
+  inset: 0;
+  background: url("bride-painted-arch.png") center / contain no-repeat;
+  filter: sepia(.82) saturate(.72) hue-rotate(349deg) brightness(1.04);
+  pointer-events: none;
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .invitation-card {
+  border-color: rgba(183,141,85,.4);
+  background:
+    repeating-linear-gradient(98deg, rgba(121,91,58,.022) 0 1px, transparent 1px 5px),
+    linear-gradient(145deg, rgba(255,252,244,.95), rgba(242,227,202,.84));
+  box-shadow: inset 0 0 0 4px rgba(255,255,255,.58), 0 13px 30px rgba(92,67,40,.1);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .invitation-card img,
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .hero-monogram,
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] footer img {
+  filter: sepia(.9) saturate(.8) hue-rotate(350deg) brightness(.83) drop-shadow(0 7px 12px rgba(92,67,40,.1));
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .hero {
+  background:
+    radial-gradient(circle at 10% 20%, rgba(220,196,154,.4), transparent 24rem),
+    radial-gradient(circle at 87% 76%, rgba(183,141,85,.17), transparent 26rem),
+    repeating-linear-gradient(96deg, rgba(79,61,44,.018) 0 1px, transparent 1px 5px),
+    linear-gradient(145deg, #eee1cc, #fcf8ee 50%, #ead6b5);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .hero::before {
+  border-color: rgba(121,91,58,.36);
+  box-shadow: inset 0 0 0 5px rgba(251,246,235,.74), inset 0 0 0 6px rgba(183,141,85,.2);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .hero-content {
+  border-color: rgba(183,141,85,.25);
+  background: repeating-linear-gradient(98deg, rgba(121,91,58,.017) 0 1px, transparent 1px 6px), linear-gradient(145deg, rgba(255,255,255,.76), rgba(244,230,205,.4));
+  box-shadow: inset 0 1px 0 white, 0 28px 75px rgba(92,67,40,.1);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .hero-content::before {
+  filter: sepia(.82) saturate(.72) hue-rotate(349deg) brightness(1.03);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .verse-section {
+  background: radial-gradient(circle at 50% 100%, rgba(220,196,154,.3), transparent 24rem), var(--paint-paper);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .parents-section {
+  background: linear-gradient(145deg, #f0e3cf, #fcf7ed);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .parents-grid article {
+  border-color: rgba(183,141,85,.28);
+  background: rgba(255,251,242,.76);
+  box-shadow: inset 0 1px 0 white, 0 18px 46px rgba(92,67,40,.07);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .date-section {
+  background: radial-gradient(circle at 16% 14%, rgba(255,255,255,.13), transparent 18rem), linear-gradient(145deg, #8b6843, #bb925d);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .events-section {
+  background: linear-gradient(180deg, #fcf8ef, #efe0c7);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .event-card {
+  border-color: rgba(183,141,85,.33);
+  background: linear-gradient(145deg, rgba(255,255,255,.86), rgba(239,224,199,.76));
+  box-shadow: inset 0 1px 0 white, 0 24px 58px rgba(92,67,40,.1);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .venue-card {
+  border-color: rgba(152,133,104,.32);
+  background: linear-gradient(145deg, rgba(245,238,222,.94), rgba(236,217,186,.86));
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .countdown div {
+  background: radial-gradient(circle at 50% 16%, rgba(255,255,255,.94), transparent 2.6rem), linear-gradient(155deg, rgba(255,251,242,.94), rgba(229,207,170,.84));
+  box-shadow: inset 0 1px 0 white, 0 13px 27px rgba(92,67,40,.16);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .countdown div:nth-child(even) {
+  background: radial-gradient(circle at 50% 16%, rgba(255,255,255,.96), transparent 2.6rem), linear-gradient(155deg, rgba(250,245,235,.95), rgba(215,188,146,.77));
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .rsvp-section {
+  background: radial-gradient(circle at 82% 20%, rgba(220,196,154,.2), transparent 23rem), linear-gradient(145deg, #62482f, #9d7548);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .contact-section {
+  background: linear-gradient(180deg, #efe0c7, #fcf8ef);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .contact-family {
+  border-color: rgba(183,141,85,.27);
+  background: rgba(255,251,242,.72);
+  box-shadow: 0 18px 44px rgba(92,67,40,.07);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] footer {
+  background: radial-gradient(circle at 50% 100%, rgba(220,196,154,.48), transparent 22rem), var(--paint-paper);
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .music-control {
+  background: rgba(121,91,58,.78);
+}
+
+/* A family invitation only lists contacts from the inviting family. */
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .bride-contacts {
+  display: none;
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .groom-contacts {
+  display: block;
+}
