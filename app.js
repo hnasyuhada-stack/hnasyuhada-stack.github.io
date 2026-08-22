@@ -31,8 +31,6 @@
   const formStatus = document.getElementById("formStatus");
   const guestCount = document.getElementById("guestCount");
   const guestCountLabel = document.getElementById("guestCountLabel");
-  const familyTheme = document.getElementById("familyTheme");
-  const familyThemeRow = document.getElementById("familyThemeRow");
   const solemnisationTheme = document.getElementById("solemnisationTheme");
   const solemnisationThemeRow = document.getElementById("solemnisationThemeRow");
   const submitButton = rsvpForm.querySelector('button[type="submit"]');
@@ -87,12 +85,10 @@
   if (lockedSide) {
     familySideInput.value = familySideNames[lockedSide];
     const sideTheme = lockedSide === "bride" ? "Dusty blue / biru muda" : "Champagne";
-    familyTheme.textContent = sideTheme;
     solemnisationTheme.textContent = sideTheme;
   } else {
     sidePickerLabel.hidden = false;
     sidePicker.required = true;
-    familyThemeRow.hidden = true;
     solemnisationThemeRow.hidden = true;
   }
 
