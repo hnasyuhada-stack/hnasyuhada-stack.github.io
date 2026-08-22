@@ -73,6 +73,10 @@
     document.getElementById("openLabelText").textContent = "Buka Gerbang Undangan";
   } else if (invitationType === "family" && lockedSide === "groom") {
     document.getElementById("openLabelText").textContent = "Buka Naskhah Undangan";
+    openButton.setAttribute("aria-label", "Buka undangan Fiqri dan Hana");
+    document.querySelector(".card-names").textContent = "Fiqri & Hana";
+    document.querySelector(".hero h1").innerHTML = "<span>Muhammad Fiqri</span><small>&amp;</small><span>Hana Syuhada</span>";
+    document.querySelector("footer strong").textContent = "Fiqri & Hana";
   } else if (invitationType === "reception" && lockedSide === "bride") {
     document.getElementById("openLabelText").textContent = "Buka Lembaran Cinta";
     document.querySelector(".opening-title").textContent = "Lembaran Cinta Kami";
