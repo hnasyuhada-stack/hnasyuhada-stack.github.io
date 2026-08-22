@@ -45,18 +45,19 @@
   // The groom route uses a separate champagne palette while `invitationType`
   // and `lockedSide` continue to control the correct family-only content.
   const usesPaintedFamilyDesign = invitationType === "family" && ["bride", "groom"].includes(lockedSide);
+  const usesChampagnePaintedDesign = lockedSide === "groom";
   const visualInvitationType = usesPaintedFamilyDesign
     ? "reception"
     : invitationType;
-  const visualSide = usesPaintedFamilyDesign ? "bride" : (lockedSide || "public");
+  const visualSide = usesPaintedFamilyDesign || usesChampagnePaintedDesign ? "bride" : (lockedSide || "public");
   document.body.dataset.invite = visualInvitationType;
   document.body.dataset.contentInvite = invitationType;
   document.body.dataset.side = visualSide;
   document.body.dataset.contentSide = lockedSide || "public";
-  if (lockedSide === "groom" && invitationType === "family") {
+  if (usesChampagnePaintedDesign) {
     document.body.dataset.palette = "champagne";
   }
-  const themeColor = lockedSide === "groom" && invitationType === "family"
+  const themeColor = usesChampagnePaintedDesign
     ? "#795b3a"
     : visualInvitationType === "reception" && lockedSide === "bride"
     ? "#18283f"
@@ -69,14 +70,17 @@
       : "#8b806d";
   document.querySelector('meta[name="theme-color"]')?.setAttribute("content", themeColor);
 
-  if (invitationType === "family" && lockedSide === "bride") {
-    document.getElementById("openLabelText").textContent = "Buka Gerbang Undangan";
-  } else if (invitationType === "family" && lockedSide === "groom") {
-    document.getElementById("openLabelText").textContent = "Buka Naskhah Undangan";
+  if (lockedSide === "groom") {
     openButton.setAttribute("aria-label", "Buka undangan Fiqri dan Hana");
     document.querySelector(".card-names").textContent = "Fiqri & Hana";
     document.querySelector(".hero h1").innerHTML = "<span>Muhammad Fiqri</span><small>&amp;</small><span>Hana Syuhada</span>";
     document.querySelector("footer strong").textContent = "Fiqri & Hana";
+  }
+
+  if (invitationType === "family" && lockedSide === "bride") {
+    document.getElementById("openLabelText").textContent = "Buka Gerbang Undangan";
+  } else if (invitationType === "family" && lockedSide === "groom") {
+    document.getElementById("openLabelText").textContent = "Buka Naskhah Undangan";
   } else if (invitationType === "reception" && lockedSide === "bride") {
     document.getElementById("openLabelText").textContent = "Buka Lembaran Cinta";
     document.querySelector(".opening-title").textContent = "Lembaran Cinta Kami";
