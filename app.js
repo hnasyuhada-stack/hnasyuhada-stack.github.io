@@ -43,11 +43,17 @@
   const rsvpSuccess = document.getElementById("rsvpSuccess");
   const closeRsvpSuccess = document.getElementById("closeRsvpSuccess");
 
-  document.body.dataset.invite = invitationType;
+  // The bride-family invitation shares the approved painted visual language,
+  // while `invitationType` continues to control its family-only content.
+  const visualInvitationType = lockedSide === "bride" && invitationType === "family"
+    ? "reception"
+    : invitationType;
+  document.body.dataset.invite = visualInvitationType;
+  document.body.dataset.contentInvite = invitationType;
   document.body.dataset.side = lockedSide || "public";
-  const themeColor = invitationType === "reception" && lockedSide === "bride"
+  const themeColor = visualInvitationType === "reception" && lockedSide === "bride"
     ? "#18283f"
-    : invitationType === "reception" && lockedSide === "groom"
+    : visualInvitationType === "reception" && lockedSide === "groom"
       ? "#71806f"
     : invitationType === "family" && lockedSide === "bride"
       ? "#718da4"
