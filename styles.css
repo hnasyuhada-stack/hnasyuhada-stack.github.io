@@ -2720,3 +2720,18 @@ body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .brid
 body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .groom-contacts {
   display: block;
 }
+
+/* Groom-family corrections: remove the stray opening ornament and lead with groom parents. */
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .envelope::before,
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .envelope::after {
+  content: none;
+  display: none;
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .parents-grid .groom-family-card {
+  order: -2;
+}
+
+body[data-invite="reception"][data-side="bride"][data-palette="champagne"] .parents-grid .gold-divider {
+  order: -1;
+}
