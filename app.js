@@ -83,12 +83,8 @@
     document.getElementById("openLabelText").textContent = "Buka Naskhah Undangan";
   } else if (invitationType === "reception" && lockedSide === "bride") {
     document.getElementById("openLabelText").textContent = "Buka Lembaran Cinta";
-    document.querySelector(".opening-title").textContent = "Lembaran Cinta Kami";
-    document.getElementById("guestGreeting").textContent = "Sebuah kisah indah dilukis buat anda";
   } else if (invitationType === "reception" && lockedSide === "groom") {
     document.getElementById("openLabelText").textContent = "Buka Warkah Cinta";
-    document.querySelector(".opening-title").textContent = "Warkah Cinta Kami";
-    document.getElementById("guestGreeting").textContent = "Dengan penuh kasih, kami menjemput anda";
   }
 
   if (guestName) {
@@ -118,7 +114,6 @@
   }
 
   document.getElementById("mapsButton").href = config.mapsUrl || "#";
-  document.getElementById("wazeButton").href = config.wazeUrl || "#";
 
   if (config.musicUrl) {
     backgroundMusic.src = config.musicUrl;
