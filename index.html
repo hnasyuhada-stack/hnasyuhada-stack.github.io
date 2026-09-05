@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ms">
+<html lang="ms" class="theme-pending">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,16 +16,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,ital,wght@6..96,400;6..96,500;6..96,600;6..96,700;6..96,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260905-23" />
+    <style>html.theme-pending body { visibility: hidden; }</style>
+    <link rel="stylesheet" href="styles.css?v=20260905-24" />
   </head>
   <body class="is-locked">
+    <script>
+      (() => {
+        try {
+          const params = new URLSearchParams(window.location.search);
+          const side = ["bride", "groom"].includes(params.get("side")) ? params.get("side") : "";
+          const invite = ["family", "reception"].includes(params.get("invite")) ? params.get("invite") : "reception";
+          document.body.dataset.invite = invite === "family" ? "reception" : invite;
+          document.body.dataset.contentInvite = invite;
+          document.body.dataset.side = side ? "bride" : "public";
+          document.body.dataset.contentSide = side || "public";
+          if (side === "groom") document.body.dataset.palette = "champagne";
+        } finally {
+          document.documentElement.classList.remove("theme-pending");
+        }
+      })();
+    </script>
     <a class="skip-link" href="#main-content">Terus ke kandungan</a>
 
     <div class="opening-screen" id="openingScreen" aria-label="Buka undangan perkahwinan">
       <span class="opening-frame" aria-hidden="true"></span>
       <div class="opening-copy">
         <span class="opening-flourish" aria-hidden="true">❦</span>
-        <p class="eyebrow opening-title">Walimatul Urus</p>
+        <p class="eyebrow opening-title" lang="ar" dir="rtl">السَّلَامُ عَلَيْكُمْ</p>
         <p class="guest-greeting" id="guestGreeting">Dengan penuh kasih, kami menjemput anda</p>
       </div>
       <button class="envelope-button" id="openInvitation" type="button" aria-label="Buka undangan Hana dan Fiqri">
@@ -45,9 +62,7 @@
           <span class="envelope-flap"></span>
           <span class="wax-seal"><img src="hf-monogram.png" alt="" /></span>
         </span>
-        <span class="open-label"><i aria-hidden="true"></i><b id="openLabelText">Buka Undangan</b><i aria-hidden="true"></i></span>
       </button>
-      <p class="opening-hint">Sentuh untuk membuka</p>
     </div>
 
     <button class="music-control" id="musicControl" type="button" aria-label="Kawal muzik latar" aria-disabled="true">
@@ -290,6 +305,6 @@
     </footer>
 
     <script src="config.js"></script>
-    <script src="app.js?v=20260905-23"></script>
+    <script src="app.js?v=20260905-24"></script>
   </body>
 </html>

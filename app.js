@@ -77,16 +77,6 @@
     document.querySelector("footer strong").textContent = "Fiqri & Hana";
   }
 
-  if (invitationType === "family" && lockedSide === "bride") {
-    document.getElementById("openLabelText").textContent = "Buka Gerbang Undangan";
-  } else if (invitationType === "family" && lockedSide === "groom") {
-    document.getElementById("openLabelText").textContent = "Buka Naskhah Undangan";
-  } else if (invitationType === "reception" && lockedSide === "bride") {
-    document.getElementById("openLabelText").textContent = "Buka Lembaran Cinta";
-  } else if (invitationType === "reception" && lockedSide === "groom") {
-    document.getElementById("openLabelText").textContent = "Buka Warkah Cinta";
-  }
-
   if (guestName) {
     document.getElementById("guestGreeting").textContent = `Istimewa buat ${guestName}`;
   }

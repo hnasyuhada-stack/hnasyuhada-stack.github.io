@@ -1993,15 +1993,24 @@ body[data-invite="reception"][data-side="bride"] .opening-frame {
 
 body[data-invite="reception"][data-side="bride"] .opening-frame::before,
 body[data-invite="reception"][data-side="bride"] .opening-frame::after { content: "✾"; color: var(--paint-blue); background: #f3f5f2; font-size: .8rem; }
-body[data-invite="reception"][data-side="bride"] .opening-copy { margin-bottom: .1rem; }
+body[data-invite="reception"][data-side="bride"] .opening-copy {
+  margin-bottom: clamp(.7rem, 1.8vh, 1rem);
+  transform: translateY(clamp(-.45rem, -1vh, -.2rem));
+}
 body[data-invite="reception"][data-side="bride"] .opening-flourish { color: var(--paint-gold); font-size: 1.25rem; text-shadow: none; }
-body[data-invite="reception"][data-side="bride"] .opening-title { color: var(--paint-deep); font: 600 .62rem var(--sans); letter-spacing: .42em; }
-body[data-invite="reception"][data-side="bride"] .guest-greeting { color: rgba(48,67,95,.72); font: italic 500 clamp(1rem, 3vw, 1.3rem)/1.3 var(--literary); }
+body[data-invite="reception"][data-side="bride"] .opening-title {
+  margin: 0 0 .2rem;
+  color: var(--paint-deep);
+  font: 500 clamp(1.05rem, 2.8vw, 1.35rem)/1.45 "Traditional Arabic", "Noto Naskh Arabic", serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+body[data-invite="reception"][data-side="bride"] .guest-greeting { color: rgba(48,67,95,.72); font: italic 500 clamp(.94rem, 2.6vw, 1.16rem)/1.28 var(--literary); }
 
 body[data-invite="reception"][data-side="bride"] .envelope-button { gap: .45rem; color: var(--paint-deep); }
 body[data-invite="reception"][data-side="bride"] .envelope-button:focus-visible { outline-color: var(--paint-blue); }
 body[data-invite="reception"][data-side="bride"] .envelope {
-  width: min(42vw, 300px);
+  width: min(48vw, 370px);
   aspect-ratio: 889 / 1136;
   background: url("bride-painted-arch.png") center / contain no-repeat;
   filter: drop-shadow(0 22px 30px rgba(63,93,134,.15));
@@ -2151,9 +2160,13 @@ body[data-invite="reception"][data-side="bride"] .music-control { border-color: 
   body[data-invite="reception"][data-side="bride"] .opening-screen::before { background-position: left -25vw bottom -6vh, right -26vw top -5vh; background-size: 72vw auto, 64vw auto; opacity: .2; }
   body[data-invite="reception"][data-side="bride"] .opening-screen::after { border-radius: .4rem; }
   body[data-invite="reception"][data-side="bride"] .opening-frame { border-radius: .25rem; }
-  body[data-invite="reception"][data-side="bride"] .opening-copy { margin-bottom: .05rem; }
-  body[data-invite="reception"][data-side="bride"] .guest-greeting { max-width: 18rem; font-size: .96rem; }
-  body[data-invite="reception"][data-side="bride"] .envelope { width: min(62vw, 270px); }
+  body[data-invite="reception"][data-side="bride"] .opening-copy {
+    margin-bottom: .65rem;
+    transform: translateY(-.35rem);
+  }
+  body[data-invite="reception"][data-side="bride"] .opening-title { font-size: 1.05rem; }
+  body[data-invite="reception"][data-side="bride"] .guest-greeting { max-width: 18rem; font-size: .92rem; }
+  body[data-invite="reception"][data-side="bride"] .envelope { width: min(82vw, 360px); }
   body[data-invite="reception"][data-side="bride"] .invitation-card { inset: 21% 18% 9%; padding: .7rem .55rem; }
   body[data-invite="reception"][data-side="bride"] .invitation-card img { width: 3.8rem; }
   body[data-invite="reception"][data-side="bride"] .opening-hint { max-width: 17rem; font-size: .64rem; }
