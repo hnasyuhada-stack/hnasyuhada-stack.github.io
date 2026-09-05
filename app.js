@@ -108,6 +108,7 @@
   if (config.musicUrl) {
     backgroundMusic.src = config.musicUrl;
     musicControl.setAttribute("aria-disabled", "false");
+    musicControl.setAttribute("aria-label", "Mainkan muzik latar");
     musicLabel.textContent = "Muzik";
   }
 
@@ -118,8 +119,10 @@
       musicControl.dataset.state = "playing";
       musicIcon.textContent = "♫";
       musicLabel.textContent = "Hentikan muzik";
+      musicControl.setAttribute("aria-label", "Hentikan muzik latar");
     } catch {
       musicLabel.textContent = "Mainkan muzik";
+      musicControl.setAttribute("aria-label", "Mainkan muzik latar");
     }
   };
 
@@ -142,6 +145,7 @@
       musicControl.dataset.state = "paused";
       musicIcon.textContent = "♪";
       musicLabel.textContent = "Mainkan muzik";
+      musicControl.setAttribute("aria-label", "Mainkan muzik latar");
     }
   });
 

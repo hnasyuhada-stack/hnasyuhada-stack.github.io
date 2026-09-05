@@ -351,6 +351,17 @@ body[data-invite="family"][data-side="groom"] .opening-screen {
 
 .music-control[aria-disabled="true"] { opacity: .7; cursor: default; }
 .music-control span:last-child { font-size: .64rem; letter-spacing: .04em; }
+#musicLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 .hero {
   position: relative;
@@ -2048,11 +2059,11 @@ body[data-invite="reception"][data-side="bride"] .invitation-card {
 
 body[data-invite="reception"][data-side="bride"] .invitation-card::before { content: "❀"; inset: auto; top: .58rem; color: var(--paint-blue); font-size: .7rem; border: 0; animation: none; }
 body[data-invite="reception"][data-side="bride"] .invitation-card::after { content: "〰"; inset: auto; bottom: .45rem; color: var(--paint-gold); font-size: .75rem; border: 0; transform: translateX(-50%); }
-body[data-invite="reception"][data-side="bride"] .invitation-card img { content: url("reception-monogram.png"); width: clamp(3.8rem, 10vw, 5.2rem); height: auto; margin: .3rem 0 .1rem; object-fit: contain; mix-blend-mode: normal; opacity: 1; filter: drop-shadow(0 5px 9px rgba(63,93,134,.08)); }
-body[data-invite="reception"][data-side="bride"] .invitation-card .card-kicker { display: block; color: var(--paint-sage); font: 600 .45rem var(--sans); letter-spacing: .22em; }
-body[data-invite="reception"][data-side="bride"] .invitation-card .card-names { display: block; color: var(--paint-deep); font: clamp(1.2rem, 4vw, 1.7rem)/1 var(--script); }
-body[data-invite="reception"][data-side="bride"] .invitation-card .card-rule { display: block; width: 2.8rem; height: 1px; margin: .28rem 0; background: linear-gradient(90deg, transparent, var(--paint-gold), transparent); }
-body[data-invite="reception"][data-side="bride"] .invitation-card .card-date { position: static; color: var(--paint-deep); font: 600 .46rem var(--sans); letter-spacing: .28em; }
+body[data-invite="reception"][data-side="bride"] .invitation-card img { content: url("reception-monogram.png"); width: clamp(4.5rem, 12vw, 6.1rem); height: auto; margin: .38rem 0 .16rem; object-fit: contain; mix-blend-mode: normal; opacity: 1; filter: drop-shadow(0 5px 9px rgba(63,93,134,.08)); }
+body[data-invite="reception"][data-side="bride"] .invitation-card .card-kicker { display: block; color: var(--paint-sage); font: 600 .52rem var(--sans); letter-spacing: .22em; }
+body[data-invite="reception"][data-side="bride"] .invitation-card .card-names { display: block; color: var(--paint-deep); font: clamp(1.45rem, 4.6vw, 2rem)/1 var(--script); }
+body[data-invite="reception"][data-side="bride"] .invitation-card .card-rule { display: block; width: 3.2rem; height: 1px; margin: .34rem 0; background: linear-gradient(90deg, transparent, var(--paint-gold), transparent); }
+body[data-invite="reception"][data-side="bride"] .invitation-card .card-date { position: static; color: var(--paint-deep); font: 600 .54rem var(--sans); letter-spacing: .28em; }
 
 body[data-invite="reception"][data-side="bride"] .opening-screen.is-opening .invitation-card { transform: translateY(-7%) scale(1.06); opacity: .12; }
 body[data-invite="reception"][data-side="bride"] .opening-screen.is-opening .envelope { animation-play-state: paused; transform: scale(1.1); opacity: .18; transition: transform .9s ease, opacity .65s ease .2s; }
@@ -2168,7 +2179,7 @@ body[data-invite="reception"][data-side="bride"] .music-control { border-color: 
   body[data-invite="reception"][data-side="bride"] .guest-greeting { max-width: 18rem; font-size: .92rem; }
   body[data-invite="reception"][data-side="bride"] .envelope { width: min(82vw, 360px); }
   body[data-invite="reception"][data-side="bride"] .invitation-card { inset: 21% 18% 9%; padding: .7rem .55rem; }
-  body[data-invite="reception"][data-side="bride"] .invitation-card img { width: 3.8rem; }
+  body[data-invite="reception"][data-side="bride"] .invitation-card img { width: 4.5rem; }
   body[data-invite="reception"][data-side="bride"] .opening-hint { max-width: 17rem; font-size: .64rem; }
   body[data-invite="reception"][data-side="bride"] .hero { padding: 4.5rem .65rem 3rem; }
   body[data-invite="reception"][data-side="bride"] .hero::before { inset: .7rem; border-radius: .4rem; }
